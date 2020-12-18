@@ -8,19 +8,25 @@
 import UIKit
 
 class CitiesTableViewController: UITableViewController {
+    
+    let citiesViewModel = CitiesViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "cloudsBG.jpg")!)
         let bgImage = UIImageView(image: UIImage(named: "cloudsBG.jpg"))
         bgImage.contentMode = .scaleAspectFill
         self.tableView.backgroundView = bgImage
+        
+        self.citiesViewModel.callService { result in
+            switch result {
+            case .success( _):
+                self.tableView.reloadData()
+            case .failure( _):
+                    print("<====Error=====>")
+            }
+            
+        }
     }
 
     // MARK: - Table view data source
@@ -32,15 +38,16 @@ class CitiesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return self.citiesViewModel.weathers?.list.count ?? 0
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "citiesCell", for: indexPath)
-
-         
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "citiesCell", for: indexPath) as! CitiesTableViewCell
+        
+        cell.cityLabel.text = self.citiesViewModel.weatherList(atIndex: indexPath.row).city
+        cell.temperatureLabel.text = self.citiesViewModel.weatherList(atIndex: indexPath.row).temprautre
+        
         return cell
     }
     
