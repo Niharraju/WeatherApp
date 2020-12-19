@@ -44,7 +44,7 @@ extension list {
     }
     
     var temprautre: String {
-        return String(Int(main.temp)) + "˚"
+        return String(Int(main.temp)) + "˚c"
     }
     
     var imageUrl: URL {
@@ -57,23 +57,23 @@ extension list {
     }
     
     var feelsLike: String {
-        return "Feels Like: " + String(Int(main.feels_like)) + "˚"
+        return "Feels Like: " + String(Int(main.feels_like)) + "˚c"
     }
     
     var temperatureRange: String {
-        return "\(Int(main.temp_min))˚ - \(Int(main.temp_max))˚"
+        return "\(Int(main.temp_min))˚c - \(Int(main.temp_max))˚c"
     }
     
     var pressure: String {
-        return String(main.pressure)
+        return String(main.pressure) + " hPa"
     }
     
     var humidity: String {
-        return String(main.humidity)
+        return String(main.humidity) + "%"
     }
     
     var windSpeed: String {
-        return String(wind.speed) + "meter/sec"
+        return String(wind.speed) + " meter/sec"
     }
     
     var windDirection: String {
