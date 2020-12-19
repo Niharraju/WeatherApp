@@ -10,6 +10,13 @@
 		251767E6258C778F00A2DF03 /* AddCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251767E5258C778F00A2DF03 /* AddCityViewController.swift */; };
 		251767EB258C7D3F00A2DF03 /* AddCityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251767EA258C7D3F00A2DF03 /* AddCityViewModel.swift */; };
 		259BADBB258BA8FD000EE733 /* CitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259BADBA258BA8FD000EE733 /* CitiesTableViewCell.swift */; };
+		25AB2347258E01D100276DE6 /* WeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AB2346258E01D100276DE6 /* WeatherDetailViewController.swift */; };
+		25AB234D258E050600276DE6 /* WeatherDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AB234B258E050600276DE6 /* WeatherDetailTableViewCell.swift */; };
+		25AB234E258E050600276DE6 /* WeatherDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25AB234C258E050600276DE6 /* WeatherDetailTableViewCell.xib */; };
+		25AB2354258E536800276DE6 /* TemperaturePressureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AB2352258E536800276DE6 /* TemperaturePressureTableViewCell.swift */; };
+		25AB2355258E536800276DE6 /* TemperaturePressureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25AB2353258E536800276DE6 /* TemperaturePressureTableViewCell.xib */; };
+		25AB235B258E6F4F00276DE6 /* WindDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25AB2359258E6F4F00276DE6 /* WindDetailsTableViewCell.swift */; };
+		25AB235C258E6F4F00276DE6 /* WindDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25AB235A258E6F4F00276DE6 /* WindDetailsTableViewCell.xib */; };
 		25FB3555258B32B4009E74BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FB3554258B32B4009E74BF /* AppDelegate.swift */; };
 		25FB3557258B32B4009E74BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FB3556258B32B4009E74BF /* SceneDelegate.swift */; };
 		25FB3559258B32B4009E74BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FB3558258B32B4009E74BF /* ViewController.swift */; };
@@ -47,6 +54,13 @@
 		251767E5258C778F00A2DF03 /* AddCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewController.swift; sourceTree = "<group>"; };
 		251767EA258C7D3F00A2DF03 /* AddCityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewModel.swift; sourceTree = "<group>"; };
 		259BADBA258BA8FD000EE733 /* CitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesTableViewCell.swift; sourceTree = "<group>"; };
+		25AB2346258E01D100276DE6 /* WeatherDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailViewController.swift; sourceTree = "<group>"; };
+		25AB234B258E050600276DE6 /* WeatherDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailTableViewCell.swift; sourceTree = "<group>"; };
+		25AB234C258E050600276DE6 /* WeatherDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherDetailTableViewCell.xib; sourceTree = "<group>"; };
+		25AB2352258E536800276DE6 /* TemperaturePressureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperaturePressureTableViewCell.swift; sourceTree = "<group>"; };
+		25AB2353258E536800276DE6 /* TemperaturePressureTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TemperaturePressureTableViewCell.xib; sourceTree = "<group>"; };
+		25AB2359258E6F4F00276DE6 /* WindDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		25AB235A258E6F4F00276DE6 /* WindDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WindDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		25FB3551258B32B4009E74BF /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25FB3554258B32B4009E74BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25FB3556258B32B4009E74BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +113,12 @@
 			children = (
 				259BADBA258BA8FD000EE733 /* CitiesTableViewCell.swift */,
 				25FB355A258B32B4009E74BF /* Main.storyboard */,
+				25AB234B258E050600276DE6 /* WeatherDetailTableViewCell.swift */,
+				25AB234C258E050600276DE6 /* WeatherDetailTableViewCell.xib */,
+				25AB2352258E536800276DE6 /* TemperaturePressureTableViewCell.swift */,
+				25AB2353258E536800276DE6 /* TemperaturePressureTableViewCell.xib */,
+				25AB2359258E6F4F00276DE6 /* WindDetailsTableViewCell.swift */,
+				25AB235A258E6F4F00276DE6 /* WindDetailsTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -165,6 +185,7 @@
 			children = (
 				25FB358A258B37A3009E74BF /* CitiesTableViewController.swift */,
 				251767E5258C778F00A2DF03 /* AddCityViewController.swift */,
+				25AB2346258E01D100276DE6 /* WeatherDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -300,8 +321,11 @@
 			files = (
 				25FB3561258B32B7009E74BF /* LaunchScreen.storyboard in Resources */,
 				25FB35A4258B6B0A009E74BF /* cityList.json in Resources */,
+				25AB234E258E050600276DE6 /* WeatherDetailTableViewCell.xib in Resources */,
+				25AB235C258E6F4F00276DE6 /* WindDetailsTableViewCell.xib in Resources */,
 				25FB355E258B32B7009E74BF /* Assets.xcassets in Resources */,
 				25FB355C258B32B4009E74BF /* Main.storyboard in Resources */,
+				25AB2355258E536800276DE6 /* TemperaturePressureTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,8 +354,12 @@
 				25FB3559258B32B4009E74BF /* ViewController.swift in Sources */,
 				25FB35B2258B76D6009E74BF /* CitiesViewModel.swift in Sources */,
 				259BADBB258BA8FD000EE733 /* CitiesTableViewCell.swift in Sources */,
+				25AB234D258E050600276DE6 /* WeatherDetailTableViewCell.swift in Sources */,
 				25FB35BB258B7AA8009E74BF /* WebService.swift in Sources */,
+				25AB235B258E6F4F00276DE6 /* WindDetailsTableViewCell.swift in Sources */,
 				251767EB258C7D3F00A2DF03 /* AddCityViewModel.swift in Sources */,
+				25AB2354258E536800276DE6 /* TemperaturePressureTableViewCell.swift in Sources */,
+				25AB2347258E01D100276DE6 /* WeatherDetailViewController.swift in Sources */,
 				251767E6258C778F00A2DF03 /* AddCityViewController.swift in Sources */,
 				25FB359F258B6A33009E74BF /* City.swift in Sources */,
 				25FB3555258B32B4009E74BF /* AppDelegate.swift in Sources */,

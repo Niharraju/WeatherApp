@@ -16,6 +16,7 @@ struct list: Codable {
     let main: main
     let name: String
     let id: Int
+    let wind: Wind
 }
 
 struct weather: Codable {
@@ -26,4 +27,14 @@ struct weather: Codable {
 
 struct main: Codable {
     let temp: Double
+    let feels_like: Double
+    let temp_min: Double
+    let temp_max: Double
+    let pressure: Double
+    let humidity: Double
+}
+
+struct Wind: Codable {
+    let speed: Double
+    let deg: Double
 }

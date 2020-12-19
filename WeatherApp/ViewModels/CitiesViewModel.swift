@@ -51,6 +51,34 @@ extension list {
         let url = URL.init(string: "http://openweathermap.org/img/wn/\(weather[0].icon)@2x.png")
         return url!
     }
+    
+    var weatherConditionDescription: String {
+        return weather[0].description
+    }
+    
+    var feelsLike: String {
+        return "Feels Like: " + String(Int(main.feels_like)) + "˚"
+    }
+    
+    var temperatureRange: String {
+        return "\(Int(main.temp_min))˚ - \(Int(main.temp_max))˚"
+    }
+    
+    var pressure: String {
+        return String(main.pressure)
+    }
+    
+    var humidity: String {
+        return String(main.humidity)
+    }
+    
+    var windSpeed: String {
+        return String(wind.speed) + "meter/sec"
+    }
+    
+    var windDirection: String {
+        return String(wind.deg) + "˚"
+    }
 }
 
 extension CitiesViewModel {

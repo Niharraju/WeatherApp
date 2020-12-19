@@ -60,9 +60,14 @@ class CitiesTableViewController: UITableViewController, AddCityDelegate {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let topViewController  = segue.destination as! UINavigationController
-        let addCityViewController = topViewController.viewControllers[0] as! AddCityViewController
-        addCityViewController.delegate = self
+        if segue.identifier != "WeatherDetailViewController" {
+            let topViewController  = segue.destination as! UINavigationController
+            let addCityViewController = topViewController.viewControllers[0] as! AddCityViewController
+            addCityViewController.delegate = self
+        } else {
+            let weatherDetailsViewController = segue.destination as! WeatherDetailViewController
+            weatherDetailsViewController.weatherList = sender as? list
+        }
     }
     
 
@@ -89,6 +94,11 @@ extension CitiesTableViewController {
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "WeatherDetailViewController", sender: self.citiesViewModel.weatherList(atIndex: indexPath.row))
+    }
+    
     
 
     /*
@@ -128,6 +138,7 @@ extension CitiesTableViewController {
 }
 
 extension CitiesTableViewController {
+    // MARK: - AddCityDelegate
     func addSelectedCity(with cityID: Int) {
         citiesViewModel.citiesId.append(cityID)
         callToFetchWeather()

@@ -82,6 +82,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="V85-u6-c8c" kind="show" identifier="WeatherDetailViewController" id="pv2-Uo-UuT"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8I8-EO-A8t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -191,6 +194,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uEo-WW-00W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1800.0000000000002" y="130.58035714285714"/>
+        </scene>
+        <!--Weather Detail View Controller-->
+        <scene sceneID="ToK-4H-Wa8">
+            <objects>
+                <viewController storyboardIdentifier="WeatherDetailViewController" id="V85-u6-c8c" customClass="WeatherDetailViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tpC-ds-yHE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="rh0-sh-YAz">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="jDc-LJ-4lL">
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jDc-LJ-4lL" id="M72-kN-k4U">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="V85-u6-c8c" id="rMG-9Q-22h"/>
+                                    <outlet property="delegate" destination="V85-u6-c8c" id="AAJ-bB-F5e"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7Bb-ZC-bjo"/>
+                        <color key="backgroundColor" red="0.2237159014" green="0.30318114159999998" blue="0.40001416210000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="rh0-sh-YAz" firstAttribute="top" secondItem="7Bb-ZC-bjo" secondAttribute="top" id="DFl-Va-WSl"/>
+                            <constraint firstAttribute="bottom" secondItem="rh0-sh-YAz" secondAttribute="bottom" id="ETG-Bs-rez"/>
+                            <constraint firstItem="rh0-sh-YAz" firstAttribute="leading" secondItem="7Bb-ZC-bjo" secondAttribute="leading" id="fQW-CX-WZw"/>
+                            <constraint firstItem="rh0-sh-YAz" firstAttribute="trailing" secondItem="7Bb-ZC-bjo" secondAttribute="trailing" id="sB9-yK-vFx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="uFK-tA-4de"/>
+                    <connections>
+                        <outlet property="weatherDetailsTableView" destination="rh0-sh-YAz" id="DaK-PR-kn2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cde-fT-efs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1800.0000000000002" y="868.52678571428567"/>
         </scene>
     </scenes>
     <resources>
