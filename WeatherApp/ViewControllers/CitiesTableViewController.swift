@@ -7,9 +7,11 @@
 
 import UIKit
 
-class CitiesTableViewController: UITableViewController {
+class CitiesTableViewController: UITableViewController, AddCityDelegate {
     
     let citiesViewModel = CitiesViewModel()
+    let pullToRefresh = UIRefreshControl()
+    var progressHud: UIActivityIndicatorView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +20,25 @@ class CitiesTableViewController: UITableViewController {
         bgImage.contentMode = .scaleAspectFill
         self.tableView.backgroundView = bgImage
         
+        progressHud = UIActivityIndicatorView(frame: CGRect(x: 100, y: 100, width: 50, height: 50))//UIActivityIndicatorView(style: .large)
+        progressHud?.center = view.center
+        progressHud?.style = .large
+        progressHud?.color = .white
+        progressHud?.hidesWhenStopped = true
+        self.view.addSubview(progressHud!)
+        
+        callToFetchWeather()
+        
+        pullToRefresh.tintColor = .white
+        pullToRefresh.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        tableView.addSubview(pullToRefresh)
+    }
+    
+    func callToFetchWeather() {
+        progressHud?.startAnimating()
         self.citiesViewModel.callService { result in
+            self.pullToRefresh.endRefreshing()
+            self.progressHud?.stopAnimating()
             switch result {
             case .success( _):
                 self.tableView.reloadData()
@@ -28,16 +48,34 @@ class CitiesTableViewController: UITableViewController {
             
         }
     }
+    
+    @objc func refresh(_ sender: AnyObject) {
+        callToFetchWeather()
+    }
 
+    
+
+    
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let topViewController  = segue.destination as! UINavigationController
+        let addCityViewController = topViewController.viewControllers[0] as! AddCityViewController
+        addCityViewController.delegate = self
+    }
+    
+
+}
+
+extension CitiesTableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return self.citiesViewModel.weathers?.list.count ?? 0
     }
 
@@ -47,6 +85,7 @@ class CitiesTableViewController: UITableViewController {
         
         cell.cityLabel.text = self.citiesViewModel.weatherList(atIndex: indexPath.row).city
         cell.temperatureLabel.text = self.citiesViewModel.weatherList(atIndex: indexPath.row).temprautre
+        cell.weatherIconImageView.load(url: self.citiesViewModel.weatherList(atIndex: indexPath.row).imageUrl)
         
         return cell
     }
@@ -68,7 +107,7 @@ class CitiesTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 
@@ -86,15 +125,11 @@ class CitiesTableViewController: UITableViewController {
         return true
     }
     */
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension CitiesTableViewController {
+    func addSelectedCity(with cityID: Int) {
+        citiesViewModel.citiesId.append(cityID)
+        callToFetchWeather()
     }
-    */
-
 }
