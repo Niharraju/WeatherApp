@@ -11,10 +11,6 @@ class AddCityViewModel {
     
     var cities = [City]()
     var filteredCities = [City]()
- 
-//    init() {
-//        
-//    }
     
     func fetchCitiesListFromJson(oncompletion:(_ success: Bool) -> Void) {
         if let localData = self.readLocalFile(forName: "cityList") {

@@ -21,7 +21,7 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        progressHud = UIActivityIndicatorView(frame: CGRect(x: 100, y: 100, width: 50, height: 50))//UIActivityIndicatorView(style: .large)
+        progressHud = UIActivityIndicatorView(frame: CGRect(x: 100, y: 100, width: 50, height: 50))
         progressHud?.center = view.center
         progressHud?.style = .large
         progressHud?.color = .white
@@ -64,7 +64,6 @@ extension AddCityViewController {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "citiesCell", for: indexPath)
         
-//        cell.textLabel?.text = "Hyderabad"
         cell.textLabel?.text = addCityViewModel.filteredCities[indexPath.row].name
         cell.textLabel?.textColor = .white
         cell.textLabel?.font = UIFont.systemFont(ofSize: 20.0)
@@ -86,13 +85,6 @@ extension AddCityViewController {
     // MARK: - TextView data source
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let searchText  = textField.text! + string
-        /*
-        if searchText.count > 3 {
-            addCityViewModel.filterCities(withInput: searchText) { (filteredList) in
-                self.citiesTableView.reloadData()
-            }
-        }*/
-        
         addCityViewModel.filterCities(withInput: searchText) { (filteredList) in
             self.citiesTableView.reloadData()
         }
