@@ -12,14 +12,14 @@ struct Weather: Codable {
 }
 
 struct List: Codable {
-    let weather: [weatherDetails]
+    let weather: [WeatherDetails]
     let main: Main
     let name: String
     let id: Int
     let wind: Wind
 }
 
-struct weatherDetails: Codable {
+struct WeatherDetails: Codable {
     let main: String
     let description: String
     let icon: String
