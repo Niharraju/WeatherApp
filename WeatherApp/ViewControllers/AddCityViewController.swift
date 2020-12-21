@@ -43,6 +43,7 @@ class AddCityViewController: UIViewController, UITableViewDelegate, UITableViewD
         })
     }
     
+    //Cancel navigation button callback action to dismiss current view
     @IBAction func cancelButtonDidClicked(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }

@@ -34,6 +34,7 @@ class CitiesTableViewController: UITableViewController, AddCityDelegate {
         tableView.addSubview(pullToRefresh)
     }
     
+    // Call to Weather API to fecth Cities and Weather info
     func callToFetchWeather() {
         progressHud?.startAnimating()
         self.citiesViewModel.callService { result in
@@ -49,6 +50,7 @@ class CitiesTableViewController: UITableViewController, AddCityDelegate {
         }
     }
     
+    //Pull to refresh callback
     @objc func refresh(_ sender: AnyObject) {
         callToFetchWeather()
     }
@@ -74,8 +76,7 @@ class CitiesTableViewController: UITableViewController, AddCityDelegate {
 }
 
 extension CitiesTableViewController {
-    // MARK: - Table view data source
-
+    // MARK: - Table view data source and delegates
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

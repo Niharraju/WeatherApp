@@ -14,7 +14,6 @@ class AddCityViewModel {
     
     func fetchCitiesListFromJson(oncompletion:(_ success: Bool) -> Void) {
         if let localData = self.readLocalFile(forName: "cityList") {
-            //self.parse(jsonData: localData)
             self.parse(jsonData: localData) { isSuccess in
                 oncompletion(isSuccess)
             }
@@ -47,6 +46,7 @@ class AddCityViewModel {
             }
         }
     
+    //Filter cities with search string and returns filtered cities lis
     func filterCities(withInput: String, oncompletion: ([City]) -> Void) {
         filteredCities = cities.filter({ $0.name.lowercased().contains(withInput.lowercased())})
         oncompletion(filteredCities)
