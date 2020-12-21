@@ -66,7 +66,7 @@ class CitiesTableViewController: UITableViewController, AddCityDelegate {
             addCityViewController.delegate = self
         } else {
             let weatherDetailsViewController = segue.destination as! WeatherDetailViewController
-            weatherDetailsViewController.weatherList = sender as? list
+            weatherDetailsViewController.weatherList = sender as? List
         }
     }
     

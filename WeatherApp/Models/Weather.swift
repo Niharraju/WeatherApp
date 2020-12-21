@@ -8,24 +8,24 @@
 import Foundation
 
 struct Weather: Codable {
-    let list:[list]
+    let list:[List]
 }
 
-struct list: Codable {
-    let weather: [weather]
-    let main: main
+struct List: Codable {
+    let weather: [weatherDetails]
+    let main: Main
     let name: String
     let id: Int
     let wind: Wind
 }
 
-struct weather: Codable {
+struct weatherDetails: Codable {
     let main: String
     let description: String
     let icon: String
 }
 
-struct main: Codable {
+struct Main: Codable {
     let temp: Double
     let feels_like: Double
     let temp_min: Double

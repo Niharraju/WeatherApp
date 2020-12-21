@@ -10,7 +10,7 @@ import UIKit
 class WeatherDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var weatherDetailsTableView: UITableView!
-    var weatherList: list? = nil
+    var weatherList: List? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -38,7 +38,7 @@ class CitiesViewModel {
     }
 }
 
-extension list {
+extension List {
     var city: String {
         return name
     }
@@ -82,7 +82,7 @@ extension list {
 }
 
 extension CitiesViewModel {
-    func weatherList(atIndex index: Int) -> list {
+    func weatherList(atIndex index: Int) -> List {
         return (weathers?.list[index])!
     }
 }
