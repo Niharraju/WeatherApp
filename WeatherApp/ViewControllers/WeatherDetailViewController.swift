@@ -19,6 +19,8 @@ class WeatherDetailViewController: UIViewController, UITableViewDelegate, UITabl
         self.weatherDetailsTableView.register(UINib(nibName: "TemperaturePressureTableViewCell", bundle: nil), forCellReuseIdentifier: "TemperaturePressureTableViewCell")
         
         self.weatherDetailsTableView.register(UINib(nibName: "WindDetailsTableViewCell", bundle: nil), forCellReuseIdentifier: "WindDetailsTableViewCell")
+        
+        self.title = weatherList?.name
     }
     
 }
