@@ -89,9 +89,7 @@ extension CitiesTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "citiesCell", for: indexPath) as! CitiesTableViewCell
         
-        cell.cityLabel.text = self.citiesViewModel.weatherList(atIndex: indexPath.row).city
-        cell.temperatureLabel.text = self.citiesViewModel.weatherList(atIndex: indexPath.row).temprautre
-        cell.weatherIconImageView.load(url: self.citiesViewModel.weatherList(atIndex: indexPath.row).imageUrl)
+        cell.updateDetailsWith(weatherIconImageUrl: self.citiesViewModel.weatherList(atIndex: indexPath.row).imageUrl, city: self.citiesViewModel.weatherList(atIndex: indexPath.row).city, temperature: self.citiesViewModel.weatherList(atIndex: indexPath.row).temprautre)
         
         return cell
     }

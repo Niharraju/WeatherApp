@@ -16,6 +16,12 @@ class CitiesTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func updateDetailsWith(weatherIconImageUrl: URL, city: String?, temperature: String?) {
+        cityLabel.text = city
+        temperatureLabel.text = temperature
+        weatherIconImageView.load(url: weatherIconImageUrl)
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

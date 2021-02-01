@@ -38,24 +38,19 @@ extension WeatherDetailViewController {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherDetailTableViewCell", for: indexPath) as! WeatherDetailTableViewCell
-            cell.cityLabel.text = weatherList?.name
-            cell.degreeLabel.text = weatherList?.temprautre
-            cell.weatherIconImageView.load(url: weatherList!.imageUrl)
-            cell.feelsLikeLabel.text = weatherList?.feelsLike
-            cell.weatherConditionDescriptionLabel.text = weatherList?.weatherConditionDescription
             
+            cell.updateDetailsWith(iconImageUrl: weatherList!.imageUrl, degree: weatherList?.temprautre, city: weatherList?.name, weatherConditionDescription: weatherList?.weatherConditionDescription, feelsLike: weatherList?.feelsLike)
             return cell
         } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TemperaturePressureTableViewCell", for: indexPath) as! TemperaturePressureTableViewCell
-            cell.temeratureRangeLabel.text = weatherList?.temperatureRange
-            cell.pressureLabel.text = weatherList?.pressure
-            cell.humidityLabel.text = weatherList?.humidity
+            
+            cell.updateDetailsWith(temperatureRange: weatherList?.temperatureRange, pressure: weatherList?.pressure, humidity: weatherList?.humidity)
             
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "WindDetailsTableViewCell", for: indexPath) as! WindDetailsTableViewCell
-            cell.windSpeedLabel.text = weatherList?.windSpeed
-            cell.windDirectionLabel.text = weatherList?.windDirection
+            
+            cell.updateDetailsWith(windSpeed: weatherList?.windSpeed, windDirection: weatherList?.windDirection)
             
             return cell
         }

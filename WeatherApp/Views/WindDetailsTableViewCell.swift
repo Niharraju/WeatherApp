@@ -17,6 +17,11 @@ class WindDetailsTableViewCell: UITableViewCell {
         bgView.layer.cornerRadius = 15
         windSpeedLabel.adjustsFontSizeToFitWidth = true
     }
+    
+    func updateDetailsWith(windSpeed: String?, windDirection: String?) {
+        windSpeedLabel.text = windSpeed
+        windDirectionLabel.text = windDirection
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

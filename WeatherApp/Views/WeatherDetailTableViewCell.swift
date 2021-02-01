@@ -21,6 +21,14 @@ class WeatherDetailTableViewCell: UITableViewCell {
         bgView.layer.cornerRadius = 15
         
     }
+    
+    func updateDetailsWith(iconImageUrl: URL, degree: String?, city: String?, weatherConditionDescription: String?, feelsLike: String?) {
+        cityLabel.text = city
+        degreeLabel.text = degree
+        weatherIconImageView.load(url: iconImageUrl)
+        feelsLikeLabel.text = feelsLike
+        weatherConditionDescriptionLabel.text = weatherConditionDescription
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
